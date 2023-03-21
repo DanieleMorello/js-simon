@@ -10,7 +10,16 @@
   TOOLS
   -Funzione random
   -prompt
-
+  -for
+  -let/const
+  -document.getElementById
+  -document.createElement
+  -appendChild
+  -push
+  -setTimeout
+  -filter
+  -includes
+  -alert
 */
 
 // array per salvare i numeri casuali
@@ -42,4 +51,8 @@ setTimeout(function () {
     );
     userNumbers.push(userNum); // aggiunge il numero inserito dall'utente all'array
   }
+
+   // Confronta i numeri dell'utente con quelli casuali e mostra il risultato
+   const comparedNumber = randomNumbers.filter(n => userNumbers.includes(n));
+   alert(`Hai indovinato ${comparedNumber.length} numeri: ${comparedNumber.join(", ")}.`);
 }, 31000);
