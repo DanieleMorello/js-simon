@@ -13,12 +13,21 @@
 
 */
 
+// array per salvare i numeri casuali
+const randomNumbers = []; 
 // Genera 5 numeri casuali e li inserisce in una lista
 for (let i = 0; i < 5; i++) {
-  const randomNumber = Math.floor(Math.random() * 100);
+  const randomNum = Math.floor(Math.random() * 100);
   const list = document.getElementById("random-numbers");
   const listItem = document.createElement("li");
-  const text = document.createTextNode(randomNumber);
+  const text = document.createTextNode(randomNum);
   listItem.appendChild(text);
   list.appendChild(listItem);
+  randomNumbers.push(randomNum);
 }
+
+ // Nasconde i numeri dopo 30 secondi
+ setTimeout(function() {
+  const list = document.getElementById("random-numbers");
+  list.innerHTML = "";
+}, 30000);
