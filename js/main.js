@@ -12,3 +12,13 @@
   -prompt
 
 */
+
+// Genera 5 numeri casuali e li inserisce in una lista
+for (let i = 0; i < 5; i++) {
+  const randomNumber = Math.floor(Math.random() * 100);
+  const list = document.getElementById("random-numbers");
+  const listItem = document.createElement("li");
+  const text = document.createTextNode(randomNumber);
+  listItem.appendChild(text);
+  list.appendChild(listItem);
+}
