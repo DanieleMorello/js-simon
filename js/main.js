@@ -14,7 +14,7 @@
 */
 
 // array per salvare i numeri casuali
-const randomNumbers = []; 
+const randomNumbers = [];
 // Genera 5 numeri casuali e li inserisce in una lista
 for (let i = 0; i < 5; i++) {
   const randomNum = Math.floor(Math.random() * 100);
@@ -26,8 +26,20 @@ for (let i = 0; i < 5; i++) {
   randomNumbers.push(randomNum);
 }
 
- // Nasconde i numeri dopo 30 secondi
- setTimeout(function() {
+// Nasconde i numeri dopo 30 secondi
+setTimeout(function () {
   const list = document.getElementById("random-numbers");
   list.innerHTML = "";
 }, 30000);
+
+// Chiede all'utente di inserire i numeri visti precedentemente
+setTimeout(function () {
+  const userNumbers = []; // array per salvare i numeri inseriti dall'utente
+
+  for (let i = 0; i < 5; i++) {
+    const userNum = Number(
+      prompt("Inserisci uno dei numeri che hai visto precedentemente")
+    );
+    userNumbers.push(userNum); // aggiunge il numero inserito dall'utente all'array
+  }
+}, 31000);
